@@ -1,0 +1,16 @@
+.tag-li {
+  color: #f8f8f8;
+  border: 1px solid #f3aa4e;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+}
+
+.active {
+  background-color: #f3aa4e;
+}
