@@ -34,9 +34,16 @@ const tagsList = [
 class App extends Component {
   state = {
     inputText: '',
-    inputTag: tagsList[0].optionId,
+    inputTag: tagsList[0].displayText,
     taskList: [],
     activeTag: 'INITIAL',
+  }
+
+  componentDidMount() {
+    const getLocalStorageData = localStorage.getItem('taskList')
+    if (getLocalStorageData !== null) {
+      this.setState({taskList: JSON.parse(getLocalStorageData)})
+    }
   }
 
   onChangeInputText = event => {
@@ -56,11 +63,15 @@ class App extends Component {
       tag: inputTag,
     }
     if (inputText.length !== 0) {
-      this.setState(prevState => ({
-        taskList: [...prevState.taskList, newTask],
-        inputText: '',
-        inputTag: tagsList[0].optionId,
-      }))
+      this.setState(prevState => {
+        const updatedTaskList = [...prevState.taskList, newTask]
+        localStorage.setItem('taskList', JSON.stringify(updatedTaskList))
+        return {
+          taskList: [...prevState.taskList, newTask],
+          inputText: '',
+          inputTag: tagsList[0].optionId,
+        }
+      })
     }
   }
 
@@ -137,7 +148,14 @@ class App extends Component {
             <h1 className="tags-heading">Tasks</h1>
             {getFilteredTasks.length === 0 ? (
               <div className="no-task-container">
-                <p className="no-tasks">No Tasks Added Yet</p>
+                {activeTag === 'INITIAL' ? (
+                  <p className="no-tasks">No Tasks Added Yet</p>
+                ) : (
+                  <p className="no-tasks">{`No ${
+                    activeTag.charAt(0).toUpperCase() +
+                    activeTag.slice(1).toLowerCase()
+                  } Tasks Added Yet`}</p>
+                )}
               </div>
             ) : (
               <ul className="tasks-list">
