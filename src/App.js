@@ -110,8 +110,8 @@ class App extends Component {
                 onChange={this.onChangeSelect}
               >
                 {tagsList.map(eachTag => (
-                  <option className="option-ele" key={v4()}>
-                    {eachTag.optionId}
+                  <option className="option-ele" key={eachTag.optionId}>
+                    {eachTag.displayText}
                   </option>
                 ))}
               </select>
