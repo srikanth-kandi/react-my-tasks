@@ -4,9 +4,12 @@ Live demo - [https://srikanth-kandi.github.io/react-my-tasks/](https://srikanth-
 
 The goal of this coding exam is to quickly get you off the ground with **Lists and Keys**.
 
-### Refer to the image below:
+### Refer to the Video below:
 
-<br>
+<br/>
+
+https://github.com/srikanth-kandi/react-my-tasks/assets/87417638/06c22005-d74a-4858-bfef-cdde1454c3ad
+
 <div style="text-align: center;">
   <video style="max-width:80%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
     <source src="https://assets.ccbp.in/frontend/content/react-js/my-tasks-output.mp4" type="video/mp4">
