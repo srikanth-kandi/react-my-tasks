@@ -1,6 +1,6 @@
 .tag-li {
   color: #f8f8f8;
-  border: 1px solid #f3aa4e;
+  border: 2px solid #f3aa4e;
   border-radius: 20px;
   padding: 10px 15px;
   font-family: 'Roboto';
@@ -9,6 +9,10 @@
   cursor: pointer;
   background-color: transparent;
   outline: none;
+}
+
+.tag-li:hover {
+  background-color: #f3aa4e;
 }
 
 .active {
